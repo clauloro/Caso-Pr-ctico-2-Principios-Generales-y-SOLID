@@ -85,22 +85,27 @@ Aquí está cómo se podrían ver nuestras clases:
 
 
 class DataBaseManager:
+
     def __init__(self, connection_string):
         self.connection_string = connection_string
 
 class Authenticator:
+
     def __init__(self, user_database):
         self.user_database = user_database
 
 class PaymentProcessor:
+
     def __init__(self, api_key):
         self.api_key = api_key
 
 class OrderManager:
+
     def __init__(self, database_manager, authenticator, payment_processor):
         self.database_manager = database_manager
         self.authenticator = authenticator
         self.payment_processor = payment_processor
+        
         
 Ahora, en lugar de crear las instancias de las dependencias dentro de la OrderManager, puedes crearlas en algún lugar centralizado y pasarlas como argumentos al constructor de la OrderManager.
 
