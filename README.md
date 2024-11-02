@@ -4,7 +4,7 @@
 
 ### Repositorio: https://github.com/clauloro/Caso-Pr-ctico-2-Principios-Generales-y-SOLID.git
 
-Ejercicio práctico1 (3Puntos): Creación de una clase en Python que representa una matriz.
+__Ejercicio práctico 1__ (3Puntos): Creación de una clase en Python que representa una matriz.
 Para este ejercicio, deberás crear una clase que representa una matriz. Las operaciones que esta clase debe permitir son la creación de una matriz a partir de una lista de listas, la impresión de la matriz en una forma legible, y el cálculo de la transpuesta de la matriz. Asegúrate de que cada método tenga una única responsabilidad.
 
 
@@ -36,13 +36,15 @@ Esto debería dar como resultado:
 
 [1, 3]
 [2, 4]
+
 Se debe evaluar la implementación correcta de la responsabilidad única (cada método hace una sola cosa), la claridad del código y la correcta utilización de las características de Python.
 
 Criterio de evaluación:
 Claridad y limpieza del código (30%)
 Implementación correcta de la responsabilidad única (40%)
 Uso correcto de las características de Python (30%)
-Ejercicio 2(7 Puntos): La pizzería
+__Ejercicio 2 (7 Puntos): La pizzería__
+
 Estás creando un sistema de gestión de pedidos de pizza en línea utilizando Python. Este sistema consta de varios componentes que interactúan entre sí. Los componentes principales son:
 
 DataBaseManager: Esta clase es responsable de manejar la conexión con la base de datos y realizar operaciones CRUD.
@@ -55,7 +57,9 @@ PaymentProcessor: Esta clase es responsable de manejar las transacciones de pago
 
 Estos componentes no deben crearse ni gestionarse dentro de cada clase que los utiliza, sino que deben ser creados en algún lugar centralizado y "inyectados" en las clases que los necesitan.
 
-Tu tarea es implementar este sistema utilizando el concepto de inyección de dependencias. Debes definir cada clase y sus dependencias, luego inyectar las dependencias a través de los constructores de las clases. Por ejemplo, la clase OrderManager debería recibir instancias de DataBaseManager, Authenticator, y PaymentProcessor a través de su constructor.
+Tu tarea es implementar este sistema utilizando el concepto de inyección de dependencias. Debes definir cada clase y sus dependencias, luego inyectar las dependencias a través de los constructores de las clases.
+
+Por ejemplo, la clase OrderManager debería recibir instancias de DataBaseManager, Authenticator, y PaymentProcessor a través de su constructor.
 
 Al implementar este sistema, considera los siguientes aspectos:
 
@@ -90,12 +94,10 @@ class OrderManager:
 Ahora, en lugar de crear las instancias de las dependencias dentro de la OrderManager, puedes crearlas en algún lugar centralizado y pasarlas como argumentos al constructor de la OrderManager.
 
 
-# Crear instancias de nuestras dependencias
 database_manager = DataBaseManager("my-database-connection-string")
 authenticator = Authenticator(database_manager)
 payment_processor = PaymentProcessor("my-payment-api-key")
 
-# Crear una instancia de OrderManager, pasando nuestras dependencias
 order_manager = OrderManager(database_manager, authenticator, payment_processor)
 Rubrica de Evaluación del Ejercicio de Inyección de Dependencias
 
