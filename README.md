@@ -9,6 +9,7 @@ Para este ejercicio, deberás crear una clase que representa una matriz. Las ope
 
 
 class Matriz:
+
     def __init__(self, elementos):
         self.elementos = elementos
 
@@ -18,23 +19,31 @@ class Matriz:
 
     def transpuesta(self):
         return Matriz([[fila[i] for fila in self.elementos] for i in range(len(self.elementos[0]))])
+        
 Este código define una clase Matriz con tres métodos. El método __init__ crea una nueva matriz a partir de una lista de listas. El método imprimir imprime la matriz en una forma legible. El método transpuesta crea una nueva matriz que es la transpuesta de la matriz original.
 
 Un buen ejemplo para este ejercicio podría ser la creación de una matriz 2x2, su impresión y la impresión de su transpuesta. Aquí tienes un ejemplo de cómo usar la clase Matriz para hacer esto:
 
 
 m = Matriz([[1, 2], [3, 4]])
+
 m.imprimir()
+
 print()
+
 m_transpuesta = m.transpuesta()
+
 m_transpuesta.imprimir()
+
 Esto debería dar como resultado:
 
 
 [1, 2]
+
 [3, 4]
 
 [1, 3]
+
 [2, 4]
 
 Se debe evaluar la implementación correcta de la responsabilidad única (cada método hace una sola cosa), la claridad del código y la correcta utilización de las características de Python.
@@ -43,6 +52,7 @@ Criterio de evaluación:
 Claridad y limpieza del código (30%)
 Implementación correcta de la responsabilidad única (40%)
 Uso correcto de las características de Python (30%)
+
 __Ejercicio 2 (7 Puntos): La pizzería__
 
 Estás creando un sistema de gestión de pedidos de pizza en línea utilizando Python. Este sistema consta de varios componentes que interactúan entre sí. Los componentes principales son:
@@ -91,6 +101,7 @@ class OrderManager:
         self.database_manager = database_manager
         self.authenticator = authenticator
         self.payment_processor = payment_processor
+        
 Ahora, en lugar de crear las instancias de las dependencias dentro de la OrderManager, puedes crearlas en algún lugar centralizado y pasarlas como argumentos al constructor de la OrderManager.
 
 
